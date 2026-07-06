@@ -161,13 +161,6 @@ a {
   max-width: 980px;
 }
 
-.showcase-hero__note {
-  margin: 14px 0 0;
-  color: var(--showcase-muted);
-  font-size: 0.98rem;
-  line-height: 1.7;
-}
-
 .showcase-button {
   display: inline-flex;
   align-items: center;

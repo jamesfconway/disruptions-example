@@ -19,18 +19,26 @@ const navItems: NavItem[] = [
 const storyBlocks = [
   {
     title: "Situation",
-    body:
-      "Users of a Bus Control product needed to be able to customize the preset disruption types and causes used when recording service disruptions. While exploring how to make the capability more customizable, I found friction in the current workflow that added up to 30+ hours of lost time each month across the user base."
+    body: (
+      <>
+        Users of a Bus Control product needed to be able to customize the preset
+        disruption types and causes used when recording service disruptions.
+        <br />
+        <br />
+        While exploring that problem, I found friction in the current workflow that
+        added up to 30+ hours of lost time each month across the user base.
+      </>
+    )
   },
   {
     title: "Task",
     body:
-      "I determined what needed to change to remove that friction and turn a messy set of interactions into a clearer workflow."
+      "I mapped the workflow, the interaction model, and the configuration rules that needed to change to remove that friction."
   },
   {
     title: "Action",
     body:
-      "I used ChatGPT to capture requirements and Figma Make to generate pure frontend prototypes. One covers the user side across three disruption entry points; the other covers the admin side for disruption types, causes, and valid type-cause links. I used both to align design and engineering."
+      "I turned the findings into pure frontend prototypes that made the required changes concrete for design and engineering."
   }
 ];
 
@@ -148,11 +156,20 @@ function HomePage() {
               hours each month across the user base. I used AI-assisted frontend prototypes to
               show what needed to change.
             </p>
-            <p className="showcase-hero__note">
-              ChatGPT was used to structure qualitative and quantitative discovery findings and
-              generate requirement prompts. Figma Make was then used to generate the frontend
-              prototypes.
-            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="showcase-section showcase-section--cards">
+        <div className="showcase-shell">
+          <p className="showcase-eyebrow">Case study</p>
+          <div className="showcase-card-grid">
+            {storyBlocks.map((block) => (
+              <article className="showcase-card" key={block.title}>
+                <h3 className="showcase-card__title">{block.title}</h3>
+                <p className="showcase-card__body">{block.body}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -160,7 +177,6 @@ function HomePage() {
       <section className="showcase-section showcase-section--cards">
         <div className="showcase-shell">
           <p className="showcase-eyebrow">Prototypes</p>
-          <h2 className="showcase-section__title">Three entry points, two prototypes</h2>
           <div className="showcase-card-grid showcase-card-grid--two">
             {prototypeCards.map((card) => (
               <a className="showcase-card showcase-card--link" key={card.title} href={card.href}>
@@ -169,21 +185,6 @@ function HomePage() {
                 <p className="showcase-card__body">{card.description}</p>
                 <span className="showcase-card__cta">{card.cta}</span>
               </a>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="showcase-section">
-        <div className="showcase-shell">
-          <p className="showcase-eyebrow">Case study</p>
-          <h2 className="showcase-section__title">Situation, task, action</h2>
-          <div className="showcase-card-grid">
-            {storyBlocks.map((block) => (
-              <article className="showcase-card" key={block.title}>
-                <h3 className="showcase-card__title">{block.title}</h3>
-                <p className="showcase-card__body">{block.body}</p>
-              </article>
             ))}
           </div>
         </div>
