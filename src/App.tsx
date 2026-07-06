@@ -20,7 +20,7 @@ const storyBlocks = [
   {
     title: "Situation",
     body:
-      "Users of a Bus Control product needed to record service disruptions. While exploring how to make the capability more customizable, I found friction in the current workflow that added up to 30+ hours of lost time each month across the user base."
+      "Users of a Bus Control product needed to be able to customize the preset disruption types and causes used when recording service disruptions. While exploring how to make the capability more customizable, I found friction in the current workflow that added up to 30+ hours of lost time each month across the user base."
   },
   {
     title: "Task",
@@ -39,6 +39,7 @@ const prototypeCards = [
     title: "Unified Service Disruption Form",
     href: "#/service-form",
     eyebrow: "Controller workflow",
+    cta: "Open user prototype ->",
     description:
       "User-side prototype covering single-trip, multi-trip, and trip-card entry points."
   },
@@ -46,6 +47,7 @@ const prototypeCards = [
     title: "Disruption Preferences",
     href: "#/preferences",
     eyebrow: "Admin tooling",
+    cta: "Open admin prototype ->",
     description:
       "Admin prototype for disruption types, causes, and valid type-cause links."
   }
@@ -143,12 +145,13 @@ function HomePage() {
             <h1 className="showcase-title">Reducing disruption workflow friction</h1>
             <p className="showcase-lede">
               I found that friction in the existing disruption workflow was costing more than 30
-              hours each month across the user base, then used AI-assisted frontend prototypes to
+              hours each month across the user base. I used AI-assisted frontend prototypes to
               show what needed to change.
             </p>
             <p className="showcase-hero__note">
-              ChatGPT was used to capture requirements and Figma Make was used to generate the
-              frontend prototypes.
+              ChatGPT was used to structure qualitative and quantitative discovery findings and
+              generate requirement prompts. Figma Make was then used to generate the frontend
+              prototypes.
             </p>
           </div>
         </div>
@@ -164,6 +167,7 @@ function HomePage() {
                 <p className="showcase-card__eyebrow">{card.eyebrow}</p>
                 <h3 className="showcase-card__title">{card.title}</h3>
                 <p className="showcase-card__body">{card.description}</p>
+                <span className="showcase-card__cta">{card.cta}</span>
               </a>
             ))}
           </div>
