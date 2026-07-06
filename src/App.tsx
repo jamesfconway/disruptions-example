@@ -16,36 +16,21 @@ const navItems: NavItem[] = [
   { key: "preferences", href: "#/preferences", label: "Preferences" }
 ];
 
-const proofPoints = [
+const storyBlocks = [
   {
-    value: "30+ hrs",
-    label: "Monthly operational time loss quantified from workflow friction"
-  },
-  {
-    value: "2",
-    label: "Atomic white-label prototypes generated to focus discussion on behavior"
-  },
-  {
-    value: "3 layers",
-    label: "Operational workflow, admin configuration, and downstream mapping"
-  }
-];
-
-const systemLayers = [
-  {
-    title: "Operational workflow",
+    title: "Situation",
     body:
-      "I mapped the live controller experience around a simple mental model: what happened, why it happened, and what context should be recorded."
+      "Users of a Bus Control product needed to record service disruptions. While exploring how to make the capability more customizable, I found friction in the existing workflow that added up to 30+ hours of lost time each month across the user base."
   },
   {
-    title: "Admin configuration",
+    title: "Task",
     body:
-      "I separated the controller flow from the supporting dictionaries and rules so the system could stay simple for operators without losing control."
+      "I determined what needed to change to remove that friction and turn a messy set of interactions into a clearer workflow."
   },
   {
-    title: "Downstream mapping",
+    title: "Action",
     body:
-      "I treated reporting, GTFS-RT, and other external classifications as a linked layer rather than letting those concerns leak directly into the controller UI."
+      "I used ChatGPT to capture requirements and Figma Make to generate pure frontend prototypes. One covers the user side across the three disruption entry points; the other covers the admin side for disruption types, causes, and valid type-cause links. I used both to align design and engineering."
   }
 ];
 
@@ -169,116 +154,52 @@ function HomePage() {
         <div className="showcase-hero__backdrop" />
         <div className="showcase-shell showcase-hero__grid">
           <div className="showcase-hero__copy">
-            <p className="showcase-eyebrow">Landing page for a hiring-manager step, built as the seed of a broader portfolio</p>
-            <h1 className="showcase-title">From workflow friction to a clearer Bus Control product model</h1>
+            <p className="showcase-eyebrow">Bus Control disruption workflow prototype</p>
+            <h1 className="showcase-title">From workflow friction to two prototypes that aligned design and engineering</h1>
             <p className="showcase-lede">
-              I used behavioral evidence to quantify 30+ hours of operational time lost each
-              month in a disruption workflow, mapped the underlying product model, and turned
-              that into atomic white-label prototypes that made the change concrete for design
-              and engineering.
+              A small product case study about quantifying friction, deciding what needed to
+              change, and using AI-assisted frontend prototypes to make the solution concrete.
             </p>
             <div className="showcase-hero__actions">
               <a className="showcase-button" href="#/service-form">
-                Open unified form prototype
+                View user-side prototype
               </a>
               <a className="showcase-button showcase-button--ghost" href="#/preferences">
-                Open admin preferences prototype
+                View admin prototype
               </a>
             </div>
           </div>
           <aside className="showcase-hero__panel">
-            <p className="showcase-panel__title">How the prototypes were made</p>
+            <p className="showcase-panel__title">Prototype approach</p>
             <p className="showcase-panel__body">
-              These demos were generated in Figma Make from requirement documents drafted in
-              ChatGPT. I kept them intentionally atomic and white-label so conversations stayed
-              centered on workflow changes, system implications, and product decisions rather than
-              visual polish.
+              These were generated in Figma Make from requirement docs drafted in ChatGPT. I
+              kept them pure frontend, atomic, and white-label so the discussion stayed on the
+              workflow changes themselves.
             </p>
-            <ul className="showcase-panel__list">
-              <li>Prompted from requirement docs, not from vague visual inspiration</li>
-              <li>White-label on purpose to lower attachment to surface details</li>
-              <li>Split into two artifacts so each decision space stayed legible</li>
-            </ul>
           </aside>
         </div>
       </section>
 
-      <section className="showcase-proof">
-        <div className="showcase-shell showcase-proof__grid">
-          {proofPoints.map((item) => (
-            <article className="showcase-metric" key={item.label}>
-              <div className="showcase-metric__value">{item.value}</div>
-              <p className="showcase-metric__label">{item.label}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
       <section className="showcase-section">
-        <div className="showcase-shell showcase-two-column">
-          <div>
-            <p className="showcase-eyebrow">The problem</p>
-            <h2 className="showcase-section__title">I pitched this as more than a form cleanup</h2>
-            <p className="showcase-section__body">
-              The disruption experience was fragmented across overlapping actions, inconsistent
-              language, and different entry points. I treated that as a product-system problem:
-              not just too many clicks, but a weak shared model of what operators were recording,
-              why they were recording it, and how that information flowed into configuration and
-              downstream outputs.
-            </p>
-          </div>
-          <div className="showcase-callout">
-            <p className="showcase-callout__label">Broader story</p>
-            <p className="showcase-callout__body">
-              The useful thread here is all three at once: evidence to prototype, systems
-              thinking, and alignment. The analytics gave the case for change, the model gave the
-              work structure, and the prototypes gave the team something tangible to challenge.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="showcase-section showcase-section--warm">
         <div className="showcase-shell">
-          <p className="showcase-eyebrow">What I mapped out</p>
-          <h2 className="showcase-section__title">A three-layer model that could hold the whole workflow together</h2>
+          <p className="showcase-eyebrow">Case study</p>
+          <h2 className="showcase-section__title">Situation, task, action</h2>
           <div className="showcase-card-grid">
-            {systemLayers.map((layer) => (
-              <article className="showcase-card" key={layer.title}>
-                <h3 className="showcase-card__title">{layer.title}</h3>
-                <p className="showcase-card__body">{layer.body}</p>
+            {storyBlocks.map((block) => (
+              <article className="showcase-card" key={block.title}>
+                <h3 className="showcase-card__title">{block.title}</h3>
+                <p className="showcase-card__body">{block.body}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="showcase-section">
-        <div className="showcase-shell">
-          <p className="showcase-eyebrow">How prototyping fit in</p>
-          <h2 className="showcase-section__title">The prototypes were deliberate thinking tools, not fake-finished product</h2>
-          <div className="showcase-process">
-            <div className="showcase-process__step">
-              <span className="showcase-process__index">01</span>
-              <p>I translated the workflow and system constraints into requirement docs in ChatGPT.</p>
-            </div>
-            <div className="showcase-process__step">
-              <span className="showcase-process__index">02</span>
-              <p>I used Figma Make to generate clickable prototypes quickly enough to keep the conversation live.</p>
-            </div>
-            <div className="showcase-process__step">
-              <span className="showcase-process__index">03</span>
-              <p>I kept the output atomic and white-label so design and engineering attention stayed on required changes, tradeoffs, and missing details.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section className="showcase-section showcase-section--dark">
         <div className="showcase-shell">
-          <p className="showcase-eyebrow">Interactive artifacts</p>
-          <h2 className="showcase-section__title">Two linked prototypes, each carrying a distinct part of the story</h2>
-          <div className="showcase-card-grid">
+          <p className="showcase-eyebrow">Prototypes</p>
+          <h2 className="showcase-section__title">Two front-end artifacts used for alignment</h2>
+          <div className="showcase-card-grid showcase-card-grid--two">
             {prototypeCards.map((card) => (
               <article className="showcase-card showcase-card--link" key={card.title}>
                 <p className="showcase-card__eyebrow">{card.eyebrow}</p>
@@ -288,28 +209,6 @@ function HomePage() {
                   Explore prototype
                 </a>
               </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="showcase-section">
-        <div className="showcase-shell showcase-footer-links">
-          <div>
-            <p className="showcase-eyebrow">Source material</p>
-            <h2 className="showcase-section__title">Atomic prototypes, tied together in one GitHub Pages showcase</h2>
-          </div>
-          <div className="showcase-links">
-            {sourceLinks.map((link) => (
-              <a
-                key={link.href}
-                className="showcase-links__item"
-                href={link.href}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {link.label}
-              </a>
             ))}
           </div>
         </div>
