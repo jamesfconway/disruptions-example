@@ -108,10 +108,10 @@ a {
 
 .showcase-hero__grid {
   position: relative;
-  padding: 72px 0 40px;
+  padding: 56px 0 24px;
   display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(320px, 0.9fr);
-  gap: 32px;
+  grid-template-columns: 1fr;
+  gap: 0;
   align-items: start;
 }
 
@@ -136,15 +136,15 @@ a {
 .showcase-section__title {
   margin: 0;
   font-family: Georgia, Cambria, "Times New Roman", serif;
-  font-size: clamp(2.5rem, 5vw, 4.7rem);
-  line-height: 0.95;
+  font-size: clamp(2.2rem, 4vw, 3.8rem);
+  line-height: 1.02;
   letter-spacing: -0.03em;
   color: var(--showcase-deep);
 }
 
 .showcase-section__title {
-  font-size: clamp(2rem, 3vw, 3rem);
-  line-height: 1;
+  font-size: clamp(1.8rem, 2.6vw, 2.6rem);
+  line-height: 1.05;
 }
 
 .showcase-lede,
@@ -157,19 +157,23 @@ a {
   color: var(--showcase-muted);
 }
 
-.showcase-hero__actions {
-  margin-top: 28px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
+.showcase-hero__copy {
+  max-width: 760px;
+}
+
+.showcase-hero__note {
+  margin: 14px 0 0;
+  color: var(--showcase-muted);
+  font-size: 0.98rem;
+  line-height: 1.7;
 }
 
 .showcase-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 48px;
-  padding: 0 18px;
+  min-height: 44px;
+  padding: 0 16px;
   border-radius: 999px;
   background: var(--showcase-deep);
   color: #fff;
@@ -220,6 +224,10 @@ a {
   padding: 34px 0;
 }
 
+.showcase-section--cards {
+  padding-top: 12px;
+}
+
 .showcase-section--dark {
   background: linear-gradient(180deg, rgba(18, 32, 51, 0.98), rgba(19, 28, 45, 0.94));
 }
@@ -261,6 +269,18 @@ a {
 
 .showcase-card {
   padding: 24px;
+}
+
+.showcase-card--link {
+  display: block;
+  color: inherit;
+  transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease;
+}
+
+.showcase-card--link:hover {
+  transform: translateY(-2px);
+  border-color: rgba(200, 93, 46, 0.35);
+  background: rgba(255, 255, 255, 0.92);
 }
 
 .showcase-card__title {
@@ -332,20 +352,14 @@ a {
   }
 
   .showcase-hero__grid {
-    padding-top: 54px;
+    padding-top: 42px;
   }
 
   .showcase-title {
-    font-size: 2.7rem;
+    font-size: 2.45rem;
   }
 
-  .showcase-hero__actions,
   .showcase-nav {
     width: 100%;
-  }
-
-  .showcase-nav__link,
-  .showcase-button {
-    flex: 1 1 auto;
   }
 }

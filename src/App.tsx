@@ -20,7 +20,7 @@ const storyBlocks = [
   {
     title: "Situation",
     body:
-      "Users of a Bus Control product needed to record service disruptions. While exploring how to make the capability more customizable, I found friction in the existing workflow that added up to 30+ hours of lost time each month across the user base."
+      "Users of a Bus Control product needed to record service disruptions. While exploring how to make the capability more customizable, I found friction in the current workflow that added up to 30+ hours of lost time each month across the user base."
   },
   {
     title: "Task",
@@ -30,7 +30,7 @@ const storyBlocks = [
   {
     title: "Action",
     body:
-      "I used ChatGPT to capture requirements and Figma Make to generate pure frontend prototypes. One covers the user side across the three disruption entry points; the other covers the admin side for disruption types, causes, and valid type-cause links. I used both to align design and engineering."
+      "I used ChatGPT to capture requirements and Figma Make to generate pure frontend prototypes. One covers the user side across three disruption entry points; the other covers the admin side for disruption types, causes, and valid type-cause links. I used both to align design and engineering."
   }
 ];
 
@@ -40,29 +40,14 @@ const prototypeCards = [
     href: "#/service-form",
     eyebrow: "Controller workflow",
     description:
-      "A single interaction model spanning single-trip, multi-trip, and trip-card entry points so the team could compare behavior rather than argue from abstract requirements."
+      "User-side prototype covering single-trip, multi-trip, and trip-card entry points."
   },
   {
     title: "Disruption Preferences",
     href: "#/preferences",
     eyebrow: "Admin tooling",
     description:
-      "A companion preferences flow for disruption types, causes, and valid pairings that keeps configuration explicit and implementation-friendly."
-  }
-];
-
-const sourceLinks = [
-  {
-    label: "Prototype source: disruption-preferences",
-    href: "https://github.com/jamesfconway/disruption-preferences"
-  },
-  {
-    label: "Prototype source: unified-service-disruption-form",
-    href: "https://github.com/jamesfconway/unified-service-disruption-form"
-  },
-  {
-    label: "Showcase repo: disruptions-example",
-    href: "https://github.com/jamesfconway/disruptions-example"
+      "Admin prototype for disruption types, causes, and valid type-cause links."
   }
 ];
 
@@ -155,28 +140,33 @@ function HomePage() {
         <div className="showcase-shell showcase-hero__grid">
           <div className="showcase-hero__copy">
             <p className="showcase-eyebrow">Bus Control disruption workflow prototype</p>
-            <h1 className="showcase-title">From workflow friction to two prototypes that aligned design and engineering</h1>
+            <h1 className="showcase-title">Reducing disruption workflow friction</h1>
             <p className="showcase-lede">
-              A small product case study about quantifying friction, deciding what needed to
-              change, and using AI-assisted frontend prototypes to make the solution concrete.
+              I found that friction in the existing disruption workflow was costing more than 30
+              hours each month across the user base, then used AI-assisted frontend prototypes to
+              show what needed to change.
             </p>
-            <div className="showcase-hero__actions">
-              <a className="showcase-button" href="#/service-form">
-                View user-side prototype
-              </a>
-              <a className="showcase-button showcase-button--ghost" href="#/preferences">
-                View admin prototype
-              </a>
-            </div>
+            <p className="showcase-hero__note">
+              ChatGPT was used to capture requirements and Figma Make was used to generate the
+              frontend prototypes.
+            </p>
           </div>
-          <aside className="showcase-hero__panel">
-            <p className="showcase-panel__title">Prototype approach</p>
-            <p className="showcase-panel__body">
-              These were generated in Figma Make from requirement docs drafted in ChatGPT. I
-              kept them pure frontend, atomic, and white-label so the discussion stayed on the
-              workflow changes themselves.
-            </p>
-          </aside>
+        </div>
+      </section>
+
+      <section className="showcase-section showcase-section--cards">
+        <div className="showcase-shell">
+          <p className="showcase-eyebrow">Prototypes</p>
+          <h2 className="showcase-section__title">Three entry points, two prototypes</h2>
+          <div className="showcase-card-grid showcase-card-grid--two">
+            {prototypeCards.map((card) => (
+              <a className="showcase-card showcase-card--link" key={card.title} href={card.href}>
+                <p className="showcase-card__eyebrow">{card.eyebrow}</p>
+                <h3 className="showcase-card__title">{card.title}</h3>
+                <p className="showcase-card__body">{card.description}</p>
+              </a>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -189,25 +179,6 @@ function HomePage() {
               <article className="showcase-card" key={block.title}>
                 <h3 className="showcase-card__title">{block.title}</h3>
                 <p className="showcase-card__body">{block.body}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="showcase-section showcase-section--dark">
-        <div className="showcase-shell">
-          <p className="showcase-eyebrow">Prototypes</p>
-          <h2 className="showcase-section__title">Two front-end artifacts used for alignment</h2>
-          <div className="showcase-card-grid showcase-card-grid--two">
-            {prototypeCards.map((card) => (
-              <article className="showcase-card showcase-card--link" key={card.title}>
-                <p className="showcase-card__eyebrow">{card.eyebrow}</p>
-                <h3 className="showcase-card__title">{card.title}</h3>
-                <p className="showcase-card__body">{card.description}</p>
-                <a className="showcase-card__cta" href={card.href}>
-                  Explore prototype
-                </a>
               </article>
             ))}
           </div>
