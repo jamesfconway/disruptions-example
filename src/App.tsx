@@ -96,7 +96,7 @@ function App() {
         <PrototypePage
           eyebrow="Bus Control workflow prototype"
           title="Unified Service Disruption Form"
-          summary="A white-label prototype for testing a single disruption flow across trip-page and trip-card contexts."
+          summary="A prototype for a unified disruption flow across trip-page and trip-card contexts."
         >
           <ServiceFormDemo />
         </PrototypePage>
