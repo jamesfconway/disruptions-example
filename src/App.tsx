@@ -89,7 +89,7 @@ function App() {
   const route = useHashRoute();
 
   return (
-    <div className="showcase-app">
+    <div className={route === "home" ? "showcase-app" : "showcase-app showcase-app--prototype"}>
       <SiteHeader route={route} />
       {route === "home" ? <HomePage /> : null}
       {route === "service-form" ? (

@@ -31,6 +31,14 @@ a {
   min-height: 100vh;
 }
 
+.showcase-app--prototype {
+  height: 100dvh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
 .showcase-shell {
   width: min(1120px, calc(100% - 32px));
   margin: 0 auto;
@@ -298,7 +306,12 @@ a {
 }
 
 .showcase-prototype {
-  padding: 36px 0 56px;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 28px 0 20px;
 }
 
 .showcase-prototype__header {
@@ -310,7 +323,10 @@ a {
 }
 
 .showcase-prototype__canvas {
-  padding: 0 16px 24px;
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  padding: 0 16px 16px;
 }
 
 @keyframes showcase-rise {

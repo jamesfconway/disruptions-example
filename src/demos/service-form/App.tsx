@@ -18,7 +18,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 p-8">
+    <div className="bg-gray-100 p-8" style={{ minHeight: "100%" }}>
       {!hasConfirmed && (
         <div className="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow-sm">
           <div className="space-y-3">
