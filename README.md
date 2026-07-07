@@ -1,37 +1,76 @@
 # Disruptions Example
 
-`disruptions-example` is a GitHub Pages showcase that ties together two AI-assisted bus-control workflow prototypes behind a single landing page.
+This repository is a product showcase, not a production system.
 
-The front page is designed as a hiring-manager-friendly case-study entry point:
+It pulls together two AI-assisted frontend prototypes into a single GitHub Pages case study about a bus-control disruption workflow: what the workflow problem was, what product model sat underneath it, and how lightweight prototypes were used to make the change concrete.
 
-- pitch the workflow problem
-- show the product model that was mapped out
-- explain how ChatGPT requirement docs and Figma Make were used to create atomic white-label prototypes
+## The Product Problem
 
-The interactive demos are adapted from:
+Users of a Bus Control product needed to record service disruptions while also being able to customise the disruption types and causes available to them.
+
+While exploring that capability, I found that friction in the existing workflow was adding up to more than 30 hours of lost time each month across the user base. The issue was not just UI untidiness. The deeper problem was that the workflow, the configuration model, and the downstream logic were not cleanly aligned.
+
+This repo exists to show how I framed that as a product problem:
+
+- quantify the operational friction
+- map the workflow and product model underneath it
+- separate controller workflow decisions from admin configuration decisions
+- use fast prototypes to align design and engineering around what actually needed to change
+
+## What The Prototypes Show
+
+The showcase has two linked artifacts.
+
+### Unified Service Disruption Form
+
+This is the user-side prototype.
+
+It explores a more unified disruption flow across three entry points:
+
+- single-trip entry from the trip page
+- multi-trip entry from the trip page
+- single-trip entry from a trip card
+
+The point of the prototype is not visual polish. It is to test whether one disruption model can work across different operational contexts without creating unnecessary branching or extra operator effort.
+
+### Disruption Preferences
+
+This is the admin-side prototype.
+
+It focuses on the configuration model behind the workflow:
+
+- defining disruption types
+- defining causes
+- controlling which type-cause combinations are valid
+
+The point here is to make the underlying rules explicit and manageable, so the user-facing disruption flow is supported by a cleaner configuration structure.
+
+## Why These Are White-Label
+
+These prototypes were deliberately kept atomic, frontend-only, and white-label.
+
+That was intentional. The goal was to focus attention on workflow change, system implications, and product decisions rather than on branding, production architecture, or polished UI detail.
+
+## How AI Fits In
+
+I used AI as a prototyping accelerator rather than as a substitute for product thinking.
+
+ChatGPT helped structure discovery findings and requirement prompts. Figma Make was then used to generate fast frontend prototypes from those requirement documents. The result was a pair of artifacts that made the proposed changes tangible enough for design and engineering to react to, challenge, and refine.
+
+## What This Repo Is For
+
+This repo is best read as a compact case study in:
+
+- identifying workflow friction from a product perspective
+- moving from evidence to product model changes
+- using AI-assisted prototyping to create alignment
+- separating operational workflow design from admin configuration design
+
+The live version is published via GitHub Pages and is intended as a portfolio-style demonstration of that work.
+
+## Source Prototypes
+
+The demos in this repo are adapted from:
 
 - [jamesfconway/disruption-preferences](https://github.com/jamesfconway/disruption-preferences)
 - [jamesfconway/unified-service-disruption-form](https://github.com/jamesfconway/unified-service-disruption-form)
-
-## Local development
-
-```bash
-npm install
-npm run dev
-```
-
-## Build
-
-```bash
-npm run build
-```
-
-## GitHub Pages
-
-This repo is configured for GitHub Pages project hosting under `/disruptions-example/` and uses hash-based routes:
-
-- `#/`
-- `#/service-form`
-- `#/preferences`
-
-The deployment workflow publishes automatically from `main` using GitHub Actions.
